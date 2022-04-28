@@ -12,9 +12,7 @@ namespace WebApplicationServer.DAL
         internal static List<string> GetData()
         {
             List<string> allSteps = new List<string>();
-            //var response = JsonConvert.DeserializeObject<object>(@"DATA\\steps.json");
-            //string json = File.ReadAllText(@"steps.json");
-            //var playerList = JsonConvert.DeserializeObject<List<string>>(json);
+           
             string filePath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory)) + @"\DATA\steps.json";
             string json = File.ReadAllText(filePath);
             var steps = JsonConvert.DeserializeObject<List<string>>(json);
