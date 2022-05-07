@@ -9,13 +9,13 @@ namespace WebApplicationServer.DAL
 {
     public class DAL
     {
-        internal static List<string> GetData()
+        internal static List<string[]> GetData()
         {
-            List<string> allSteps = new List<string>();
+            List<string[]> allSteps = new List<string[]>();
            
             string filePath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory)) + @"\DATA\steps.json";
             string json = File.ReadAllText(filePath);
-            var steps = JsonConvert.DeserializeObject<List<string>>(json);
+            var steps = JsonConvert.DeserializeObject<List<string[]>>(json);
             foreach (var item in steps)
             {
                 allSteps.Add(item);
